@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Run this script to start the server.
+
+#Shows amount of installed memory
+ram_info=$(free -m)
+total_ram=$(echo "$ram_info" | awk '/^Mem:/ {print $2}')
+echo "Total Installed Memory: $total_ram MB"
+
+echo "How much RAM would you like to allocate to the server? (In Megabytes)"
+read alram
+
+java -Xmx"$alram"M -Xms"$alram"M -jar server.jar nogui
