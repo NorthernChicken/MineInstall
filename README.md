@@ -4,7 +4,7 @@ A simple Bash script to download and install a Minecraft server onto your comput
 # Install script
 1. ```cd ~```
 2. ```git clone https://github.com/NorthernChicken/mc-server-install-script```
-3.. ```cd minecraft-server-quick-install```
+3. ```cd minecraft-server-quick-install```
 4. ```chmod +x install && chmod +x start && chmod +x uninstall```
 
 # Running the script
