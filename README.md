@@ -23,4 +23,5 @@ To change server properties, such as Whitelist or MOTD, you will need to edit th
 # Uninstall
 Run this command to uninstall the Minecraft server and delete any associated files (in the server directory, ~/server):
 WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YOUR OWN RISK.
+
 ```./uninstall```
