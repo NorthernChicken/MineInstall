@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Run this script to uninstall the Minecraft server and delete any associated files.
+
+#WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YOUR OWN RISK.
+
+rm -rf ~/server
