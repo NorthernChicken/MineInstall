@@ -1,7 +1,7 @@
 ⚠️**Still under development**
 
 # MineInstall
-A simple Bash script to download and install a Minecraft server onto your computer/server.
+A simple Bash script to download and install a vanilla Minecraft server onto your computer/server.
 
 # Install script
 1. Navigate to the home directory: ```cd ~```
