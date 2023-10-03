@@ -3,7 +3,7 @@
 # This simple script downloads and installs a Minecraft server onto your computer/server.
 
 server_link=https://piston-data.mojang.com/v1/objects/5b868151bd02b41319f54c8d4061b8cae84e665c/server.jar
-server_run="java -Xmx1024M -Xms1024M -jar server.jar nogui"
+server_run="java -Xmx1024M -Xms1024M -jar server.jar nogui -q"
 
 
 # Check if Java is installed
@@ -25,17 +25,17 @@ check_java() {
     fi
 }
 
-#Download the server.jar file from Mojang's offical servers
+# Download the server.jar file from Mojang's official servers
 server_download() {
     if [ "$java_installed" = true ]; then
         server_directory=~/server
         if [ -d "$server_directory" ]; then
             echo "Creating proper directories..."
             cd ~
-            mkdir server
+            mkdir -p server
             cd server
             echo "Downloading server.jar..."
-            wget -q $server_link
+            wget -q "$server_link"
             if [ $? -eq 0 ]; then
                 echo "Download successful."
             else
@@ -43,26 +43,28 @@ server_download() {
                 exit
             fi
         else
-            cd ~
-            cd server
-            rm -rf "$server_directory"/*
+            echo "Creating proper directories..."
+            mkdir -p "$server_directory"
+            cd "$server_directory"
             echo "Downloading server.jar..."
-            wget -q $server_link
+            wget -q "$server_link"
             if [ $? -eq 0 ]; then
                 echo "Download successful."
             else
                 echo "Download failed. Check your internet connection and try again."
                 exit
             fi
+        fi
     else
         :
     fi
 }
 
+
 #Set up the server and accept the EULA
 server_setup() {
     eula='#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
-eula=false'
+eula=true'
     cd ~
     cd server
     echo "Running server.jar..."
@@ -71,6 +73,8 @@ eula=false'
     echo "Accepting EULA..."
     echo "$eula" > "$server_directory/eula.txt"
     echo "Creating server..."
+    cp ~/mc-server-install-script-main/start ~/mc-server-install-script-main/start
+    mv ~/mc-server-install-script-main/start ~/server/start
     $server_run
 }
 
