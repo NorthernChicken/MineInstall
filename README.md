@@ -6,7 +6,7 @@ A simple Bash script to download and install a vanilla Minecraft server onto you
 # Install script
 1. Navigate to the home directory: ```cd ~```
 2. Download the script: ```git clone https://github.com/NorthernChicken/MineInstall```
-3. Navigate to the script folder: ```cd Mineinstall```
+3. Navigate to the script folder: ```cd MineInstall```
 4. Give the script necessary permissions: ```chmod +x install && chmod +x start && chmod +x uninstall```
 
 # Running the script
