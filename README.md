@@ -4,10 +4,10 @@
 A simple Bash script to download and install a Minecraft server onto your computer/server.
 
 # Install script
-1. ```cd ~```
-2. ```git clone https://github.com/NorthernChicken/mc-server-install-script```
-3. ```cd minecraft-server-quick-install```
-4. ```chmod +x install && chmod +x start && chmod +x uninstall```
+1. Navigate to the home directory: ```cd ~```
+2. Download the script: ```git clone https://github.com/NorthernChicken/MineInstall```
+3. Navigate to the script folder: ```cd Mineinstall-main```
+4. Give the script necessary permissions: ```chmod +x install && chmod +x start && chmod +x uninstall```
 
 # Running the script
 To install a new Minecraft server, run:
@@ -28,4 +28,5 @@ Run this command to uninstall the Minecraft server and delete any associated fil
 
 WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YOUR OWN RISK.
 
+```cd ~/server```
 ```./uninstall```
