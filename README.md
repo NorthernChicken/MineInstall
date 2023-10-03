@@ -31,6 +31,6 @@ WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YO
 ```cd ~/server```
 ```./uninstall```
 
-#To-do
+# To-do
 * Make status texts colored
 * Quiet server outputs on first run
