@@ -1,4 +1,4 @@
-⚠️**Still under development**
+⚠️**Still under development. Running this script probably won't do what you want, but you can try if you really wish.**
 
 # MineInstall
 A simple Bash script to download and install a vanilla Minecraft server onto your computer/server.
