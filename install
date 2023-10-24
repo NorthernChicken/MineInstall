@@ -16,16 +16,16 @@ check_java() {
     java_installed=false
 
     if command -v java &>/dev/null; then
-        echo "Checking Java version..."
+        echo -e "${green}${bold}Checking Java version...${clear}"
         java_version=$(java --version 2>&1)
         if [ $? -eq 0 ]; then
             java_installed=true
         else
-            echo "Error: Java is not installed or an problem occurred while checking the version."
+            echo -e "${red}${bold}Error: Java is not installed or an problem occurred while checking the version.${clear}"
             exit
         fi
     else
-        echo "Error: Java is not installed."
+        echo -e "${red}${bold}Error: Java is not installed.${clear}"
         exit
     fi
 }
@@ -35,28 +35,28 @@ server_download() {
     if [ "$java_installed" = true ]; then
         server_directory=~/server
         if [ -d "$server_directory" ]; then
-            echo "Creating proper directories..."
+            echo -e "${green}${bold}Creating proper directories...${clear}"
             cd ~
             mkdir -p server
             cd server
-            echo "Downloading server.jar..."
+            echo -e "${green}${bold}Downloading server.jar...${clear}"
             wget -q "$server_link"
             if [ $? -eq 0 ]; then
-                echo "Download successful."
+                echo -e "${green}${bold}Download successful.${clear}"
             else
-                echo "Download failed. Check your internet connection and try again."
+                echo -e "${red}${bold}Download failed. Check your internet connection and try again.${clear}"
                 exit
             fi
         else
-            echo "Creating proper directories..."
+            echo -e "${green}${bold}Creating proper directories...${clear}"
             mkdir -p "$server_directory"
             cd "$server_directory"
-            echo "Downloading server.jar..."
+            echo -e "${green}${bold}Downloading server.jar...${clear}"
             wget -q "$server_link"
             if [ $? -eq 0 ]; then
-                echo "Download successful."
+                echo -e "${green}${bold}Download successful.${clear}"
             else
-                echo "Download failed. Check your internet connection and try again."
+                echo -e "${red}${bold}Download failed. Check your internet connection and try again.${clear}"
                 exit
             fi
         fi
@@ -71,12 +71,12 @@ server_setup() {
     eula='eula=true'
     cd ~
     cd server
-    echo "Running server.jar..."
+    echo -e "${green}${bold}Running server.jar...${clear}"
     $server_run
     sleep 10
-    echo "Accepting EULA..."
+    echo -e "${green}${bold}Accepting EULA...${clear}"
     echo "$eula" > "$server_directory/eula.txt"
-    echo "Creating server..."
+    echo -e "${green}${bold}Creating server...${clear}"
     cp ~/Mineinstall/start ~/server/start
     cp ~/Mineinstall/uninstall ~/server/uninstall
 }
