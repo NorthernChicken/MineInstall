@@ -8,7 +8,6 @@ server_run="java -Xmx1024M -Xms1024M -jar server.jar nogui"
 
 server_directory=~/server
 
-
 green='\e[42m'
 red='\e[31m'
 bold='\e[1m'
@@ -67,7 +66,6 @@ server_download() {
         :
     fi
 }
-
 
 #Set up the server and accept the EULA
 server_setup() {
