@@ -37,10 +37,11 @@ server_download() {
     if [ "$java_installed" = true ]; then
         server_directory=~/server
         if [ -d "$server_directory" ]; then
-            echo -e "${green}${bold}Creating proper directories...${clear}"
-            mkdir -p $server_directory
-            cd $server_directory
-            echo -e "${green}${bold}Downloading server.jar...${clear}"
+            echo "Creating proper directories..."
+            cd ~
+            mkdir -p server
+            cd server
+            echo "Downloading server.jar..."
             wget -q "$server_link"
             if [ $? -eq 0 ]; then
                 echo -e "${green}${bold}Download successful.${clear}"
@@ -49,8 +50,8 @@ server_download() {
                 exit
             fi
         else
-            echo -e "${green}${bold}Creating proper directories...${clear}"
-            mkdir -p $server_directory
+            echo "Creating proper directories..."
+            mkdir -p "$server_directory"
             cd "$server_directory"
             echo -e "${green}${bold}Downloading server.jar...${clear}"
             wget -q "$server_link"
@@ -75,7 +76,7 @@ server_setup() {
     sleep 10
     echo -e "${green}${bold}Accepting EULA...${clear}"
     echo "$eula" > "$server_directory/eula.txt"
-    echo -e "${green}${bold}Creating server...${clear}"
+    echo "Creating server..."
     cp ~/Mineinstall/start ~/server/start
     cp ~/Mineinstall/uninstall ~/server/uninstall
 }
