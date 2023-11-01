@@ -41,7 +41,7 @@ server_download() {
             mkdir -p $server_directory
             cd $server_directory
             echo "${green}${bold}Downloading server.jar...${clear}"
-            wget -q "$server_link"
+            wget "$server_link"
             if [ $? -eq 0 ]; then
                 echo -e "${green}${bold}Download successful.${clear}"
             else
@@ -53,7 +53,7 @@ server_download() {
             mkdir -p $server_directory
             cd $server_directory
             echo -e "${green}${bold}Downloading server.jar...${clear}"
-            wget -q "$server_link"
+            wget "$server_link"
             if [ $? -eq 0 ]; then
                 echo -e "${green}${bold}Download successful.${clear}"
             else
