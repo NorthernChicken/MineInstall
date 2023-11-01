@@ -36,10 +36,10 @@ check_java() {
 server_download() {
     if [ "$java_installed" = true ]; then
         if [ -d "$server_directory" ]; then
-            echo "Creating proper directories..."
+            echo "${green}${bold}Creating proper directories...${clear}"
             mkdir -p $server_directory
             cd $server_directory
-            echo "Downloading server.jar..."
+            echo "${green}${bold}Downloading server.jar...${clear}"
             wget -q "$server_link"
             if [ $? -eq 0 ]; then
                 echo -e "${green}${bold}Download successful.${clear}"
@@ -48,7 +48,7 @@ server_download() {
                 exit
             fi
         else
-            echo "Creating proper directories..."
+            echo "${green}${bold}Creating proper directories...${clear}"
             mkdir -p $server_directory
             cd $server_directory
             echo -e "${green}${bold}Downloading server.jar...${clear}"
