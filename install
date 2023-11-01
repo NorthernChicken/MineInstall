@@ -73,9 +73,9 @@ server_setup() {
     $server_run
     echo -e "${green}${bold}Accepting EULA...${clear}"
     echo "$eula" > "$server_directory/eula.txt"
-    echo e "${green}${bold}Creating server...${clear}"
-    cp ~/Mineinstall/start ~/server/start
-    cp ~/Mineinstall/uninstall ~/server/uninstall
+    echo -e "${green}${bold}Creating server...${clear}"
+    cp ~/MineInstall/start ~/server/start
+    cp ~/MineInstall/uninstall ~/server/uninstall
 }
 
 check_java
