@@ -11,7 +11,7 @@ A simple Bash script to download and install a vanilla Minecraft server onto you
 
 # Running the script
 To install a new Minecraft server, run:
-```./install```
+```sudo ./install```
 *Note that this will delete any previously installed server in ~/server*
 
 Once the script is finished, you can start the server by navigating to the server directory and executing the "start" file:
