@@ -35,12 +35,10 @@ check_java() {
 # Download the server.jar file from Mojang's official servers
 server_download() {
     if [ "$java_installed" = true ]; then
-        server_directory=~/server
         if [ -d "$server_directory" ]; then
             echo "Creating proper directories..."
-            cd ~
-            mkdir -p server
-            cd server
+            mkdir -p $server_directory
+            cd $server_directory
             echo "Downloading server.jar..."
             wget -q "$server_link"
             if [ $? -eq 0 ]; then
@@ -51,8 +49,8 @@ server_download() {
             fi
         else
             echo "Creating proper directories..."
-            mkdir -p "$server_directory"
-            cd "$server_directory"
+            mkdir -p $server_directory
+            cd $server_directory
             echo -e "${green}${bold}Downloading server.jar...${clear}"
             wget -q "$server_link"
             if [ $? -eq 0 ]; then
