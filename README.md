@@ -9,6 +9,11 @@ A simple Bash script to download and install a vanilla Minecraft server onto you
 3. Navigate to the script folder: ```cd MineInstall```
 4. Give the script necessary permissions: ```chmod +x install start uninstall```
 
+# Dependencies
+
+1. ```git```
+2. ```java```
+
 # Running the script
 To install a new Minecraft server, run:
 ```sudo ./install```
@@ -21,7 +26,7 @@ Once the script is finished, you can start the server by navigating to the serve
 To stop the server, run "stop" in the server console.
 
 To change server properties, such as Whitelist or MOTD, you will need to edit the server.properties file (while the server isn't running):
-```sudo nano server.properties```
+```sudo nano ~/server/server.properties```
 
 # Uninstall
 Run this command to uninstall the Minecraft server and delete any associated files (in the server directory, ~/server):
