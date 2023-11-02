@@ -4,4 +4,25 @@
 
 #WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YOUR OWN RISK.
 
-rm -rf ~/server
+#!/bin/bash
+
+is_true=""
+while [ "$is_true" != "true" ] && [ "$is_true" != "false" ]; do
+    echo -n "Do you want to continue? Keep in mind that this will delete your server, its world, and all player data. (y/n): "
+    read response
+
+    if [ "$response" == "y" ] || [ "$response" == "Y" ]; then
+        is_true=true
+    elif [ "$response" == "n" ] || [ "$response" == "N" ]; then
+        is_true=false
+    else
+        echo "Invalid input. Please enter 'y' or 'n'."
+    fi
+done
+
+# Display the result
+if [ "$is_true" == "true" ]; then
+    rm -rf ~/server
+else
+    echo Uninstallation aborted.
+fi
