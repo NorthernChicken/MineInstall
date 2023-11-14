@@ -40,7 +40,7 @@ server_download() {
             sudo rm -f $server_directory
             mkdir -p $server_directory
             cd $server_directory
-            echo "${green}${bold}Downloading server.jar...${clear}"
+            echo -e "${green}${bold}Downloading server.jar...${clear}"
             wget "$server_link"
             if [ $? -eq 0 ]; then
                 echo -e "${green}${bold}Download successful.${clear}"
