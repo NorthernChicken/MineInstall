@@ -37,7 +37,7 @@ server_download() {
     if [ "$java_installed" = true ]; then
         if [ -d "$server_directory" ]; then
             echo -e "${green}${bold}Erasing contents of $server_directory. This may require sudo privileges...${clear}"
-            sudo rm -f $server_directory
+            sudo rm -rf $server_directory
             mkdir -p $server_directory
             cd $server_directory
             echo -e "${green}${bold}Downloading server.jar...${clear}"
