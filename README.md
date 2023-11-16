@@ -7,11 +7,6 @@ A simple, non-bloated Bash script to download and install a vanilla Minecraft se
 3. Navigate to the script folder: ```cd MineInstall```
 4. Give the script necessary permissions: ```chmod +x install start uninstall```
 
-# Dependencies
-
-1. ```git```
-2. ```java```
-
 # Running the script
 To install a new Minecraft server, run:
 ```sudo ./install```
@@ -33,7 +28,3 @@ WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YO
 
 ```cd ~/server```
 ```./uninstall```
-
-# To-do
-* Make status texts colored
-* Quiet server outputs on first run
