@@ -20,7 +20,6 @@ while [ "$is_true" != "true" ] && [ "$is_true" != "false" ]; do
     fi
 done
 
-# Display the result
 if [ "$is_true" == "true" ]; then
     rm -rf ~/server
 else
