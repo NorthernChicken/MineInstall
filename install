@@ -70,7 +70,7 @@ server_download() {
     fi
 }
 
-#Set up the server and accept the EULA
+# Set up the server and accept the EULA
 server_setup() {
     eula='eula=true'
     cd $server_directory
