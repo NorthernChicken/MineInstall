@@ -84,5 +84,6 @@ server_setup() {
 }
 
 check_java
-server_download
-server_setup
+if $java_installed: then
+    server_download
+    server_setup
