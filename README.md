@@ -23,7 +23,7 @@ To change server properties, such as Whitelist or MOTD, you will need to edit th
 
 # Custom Minecraft Version
 
-This script automatically installs the latest version of Minecraft (1.20.4). If you want to use a different version or use a modded server (paper, spigot, etc.) you have to change the "$server_link" variable to the URL of the server.jar download.
+This script automatically installs the latest version of Minecraft. If you want to use a different version or use a modded server (paper, spigot, etc.) you have to change the "$server_link" variable to the URL of the server.jar download.
 
 # Uninstall
 Run this command to uninstall the Minecraft server and delete any associated files (in the server directory, ~/server):
