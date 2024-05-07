@@ -17,15 +17,31 @@ red='\e[31m'
 bold='\e[1m'
 clear='\e[0m'
 
+java_installed="false"
+
 install_java() {
     distribution=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
     if [[ "$distribution" == *"Ubuntu"* ]] || [[ "$distribution" == *"Debian"* ]]; then
-        sudo apt update
-        sudo apt install -y default-jre
+        sudo apt update && sudo apt install -y default-jre
+        if [ $? -eq 0 ]; then
+            java_installed="true"
+        else
+            :
+        fi
     elif [[ "$distribution" == *"CentOS"* ]] || [[ "$distribution" == *"Fedora"* ]]; then
         sudo yum install -y java
+        if [ $? -eq 0 ]; then
+            java_installed="true"
+        else
+            :
+        fi
     elif [[ "$distribution" == *"Arch"* ]]; then
         sudo pacman -Sy --noconfirm jre-openjdk
+        if [ $? -eq 0 ]; then
+            java_installed="true"
+        else
+            :
+        fi
     else
         echo -e "${red}${bold}Error: Unsupported distribution. Please install Java manually.${clear}"
         exit 1
@@ -41,37 +57,26 @@ check_java() {
             echo -e "${red}${bold}Error: Java installation failed.${clear}"
             exit 1
         fi
+    else
+        java_installed="true"
     fi
 }
 
 # Download the server.jar file from Mojang's official servers
 server_download() {
-    if [ "$java_installed" = true ]; then
-        if [ -d "$server_directory" ]; then
-            echo -e "${green}${bold}Erasing contents of $server_directory. This may require sudo privileges...${clear}"
-            sudo rm -rf $server_directory
-            mkdir -p $server_directory
-            cd $server_directory
-            echo -e "${green}${bold}Downloading server.jar...${clear}"
-            wget "$server_link"
-            if [ $? -eq 0 ]; then
-                echo -e "${green}${bold}Download successful.${clear}"
-            else
-                echo -e "${red}${bold}Download failed. Check your internet connection and try again.${clear}"
-                exit
-            fi
+    if [ "$java_installed" = "true" ]; then
+        if [ ! -d "$server_directory" ]; then
+            echo -e "${green}${bold}Creating server directory...${clear}"
+            mkdir -p "$server_directory"
+        fi
+        cd "$server_directory" || { echo "Failed to change directory."; exit 1; }
+        echo -e "${green}${bold}Downloading server.jar...${clear}"
+        wget "$server_link"
+        if [ $? -eq 0 ]; then
+            echo -e "${green}${bold}Download successful.${clear}"
         else
-            echo -e "${green}${bold}Creating proper directories...${clear}"
-            mkdir -p $server_directory
-            cd $server_directory
-            echo -e "${green}${bold}Downloading server.jar...${clear}"
-            wget "$server_link"
-            if [ $? -eq 0 ]; then
-                echo -e "${green}${bold}Download successful.${clear}"
-            else
-                echo -e "${red}${bold}Download failed. Check your internet connection and try again.${clear}"
-                exit
-            fi
+            echo -e "${red}${bold}Download failed. Check your internet connection and try again.${clear}"
+            exit
         fi
     else
         :
@@ -80,18 +85,20 @@ server_download() {
 
 # Set up the server and accept the EULA
 server_setup() {
-    eula='eula=true'
-    cd $server_directory
-    echo -e "${green}${bold}Running server.jar...${clear}"
-    $server_run
-    echo -e "${green}${bold}Accepting EULA...${clear}"
-    echo "$eula" > "$server_directory/eula.txt"
-    echo -e "${green}${bold}Creating server...${clear}"
-    cp ~/MineInstall/start ~/server/start
-    cp ~/MineInstall/uninstall ~/server/uninstall
+    if [ "$java_installed" = "true" ]; then
+        eula='eula=true'
+        echo -e "${green}${bold}Running server.jar...${clear}"
+        $server_run
+        echo -e "${green}${bold}Accepting EULA...${clear}"
+        echo "$eula" > "$server_directory/eula.txt"
+        echo -e "${green}${bold}Creating server scripts...${clear}"
+        cp ~/MineInstall/start "$server_directory/start"
+        cp ~/MineInstall/uninstall "$server_directory/uninstall"
+    else
+        :
+    fi
 }
 
 check_java
-if $java_installed: then
-    server_download
-    server_setup
+server_download
+server_setup

@@ -1,6 +1,11 @@
 # MineInstall
 A simple, non-bloated Bash script to download and install a vanilla Minecraft server onto your Linux computer/server. (Does not work with modded servers. You will have to manually replace the server.jar with a modded one and run server again.)
 
+# Supported Distros
+The following distros are officially supported:
+```Ubuntu, Debian, CentOS, Fedora, Arch```
+Other distros WILL work, but you will have to install Java manually.
+
 # Download
 1. Navigate to the home directory: ```cd ~```
 2. Download the script: ```git clone https://github.com/NorthernChicken/MineInstall```
