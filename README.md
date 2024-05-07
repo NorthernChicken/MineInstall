@@ -32,3 +32,7 @@ WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YO
 
 ```cd ~/server```
 ```./uninstall```
+
+# To-Do
+- Install Java for the user if it isn't yet installed
+- Allow the user to select which version of Minecraft and which server software (fabric, paper, spigot, etc) to use, making it scalable for future versions
