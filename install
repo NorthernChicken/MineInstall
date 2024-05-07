@@ -17,22 +17,30 @@ red='\e[31m'
 bold='\e[1m'
 clear='\e[0m'
 
+install_java() {
+    distribution=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+    if [[ "$distribution" == *"Ubuntu"* ]] || [[ "$distribution" == *"Debian"* ]]; then
+        sudo apt update
+        sudo apt install -y default-jre
+    elif [[ "$distribution" == *"CentOS"* ]] || [[ "$distribution" == *"Fedora"* ]]; then
+        sudo yum install -y java
+    elif [[ "$distribution" == *"Arch"* ]]; then
+        sudo pacman -Sy --noconfirm jre-openjdk
+    else
+        echo -e "${red}${bold}Error: Unsupported distribution. Please install Java manually.${clear}"
+        exit 1
+    fi
+}
+
 # Check if Java is installed
 check_java() {
-    java_installed=false
-
-    if command -v java &>/dev/null; then
-        echo -e "${green}${bold}Checking Java version...${clear}"
-        java_version=$(java --version 2>&1)
-        if [ $? -eq 0 ]; then
-            java_installed=true
-        else
-            echo -e "${red}${bold}Error: Java is not installed or an problem occurred while checking the version.${clear}"
-            exit
+    if ! command -v java &>/dev/null; then
+        echo -e "${red}${bold}Java is not installed. Installing Java...${clear}"
+        install_java
+        if ! command -v java &>/dev/null; then
+            echo -e "${red}${bold}Error: Java installation failed.${clear}"
+            exit 1
         fi
-    else
-        echo -e "${red}${bold}Error: Java is not installed.${clear}"
-        exit
     fi
 }
 

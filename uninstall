@@ -4,8 +4,6 @@
 
 #WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YOUR OWN RISK.
 
-#!/bin/bash
-
 is_true=""
 while [ "$is_true" != "true" ] && [ "$is_true" != "false" ]; do
     echo -n "Do you want to continue? Keep in mind that this will delete your server, its world, and all player data. (y/n): "
