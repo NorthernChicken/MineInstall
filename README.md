@@ -2,9 +2,9 @@
 A simple, non-bloated Bash script to download and install a vanilla Minecraft server onto your Linux computer/server. (Does not work with modded servers. You will have to manually replace the server.jar with a modded one and run server again.)
 
 # Supported Distros
-The following distros are officially supported:
-```Ubuntu, Debian, CentOS, Fedora, Arch```
-Other distros WILL work, but you will have to install Java manually.
+All distros that use the following package managers are supported:
+```apt, yum, dnf, pacman```. This includes all Debian, Arch, and Fedora-based distros.
+Other distros WILL still work, but you will have to install Java manually beforehand.
 
 # Download
 1. Navigate to the home directory: ```cd ~```
