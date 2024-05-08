@@ -25,22 +25,16 @@ install_java() {
         sudo apt update && sudo apt install -y default-jre
         if [ $? -eq 0 ]; then
             java_installed="true"
-        else
-            :
         fi
     elif [[ "$distribution" == *"CentOS"* ]] || [[ "$distribution" == *"Fedora"* ]]; then
         sudo yum install -y java
         if [ $? -eq 0 ]; then
             java_installed="true"
-        else
-            :
         fi
     elif [[ "$distribution" == *"Arch"* ]]; then
         sudo pacman -Sy --noconfirm jre-openjdk
         if [ $? -eq 0 ]; then
             java_installed="true"
-        else
-            :
         fi
     else
         echo -e "${red}${bold}Error: Unsupported distribution. Please install Java manually.${clear}"
