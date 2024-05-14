@@ -62,7 +62,7 @@ server_download() {
         fi
         cd "$server_directory" || { echo "Failed to change directory."; exit 1; }
         echo -e "${green}${bold}Downloading server.jar...${clear}"
-        wget "$server_link"
+        wget "$server_link" -O "server.jar"
         if [ $? -eq 0 ]; then
             echo -e "${green}${bold}Download successful.${clear}"
         else
