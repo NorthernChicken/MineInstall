@@ -18,6 +18,7 @@ bold='\e[1m'
 clear='\e[0m'
 
 java_installed="false"
+dialog_installed="false"
 
 install_java() {
     if command -v apt &>/dev/null; then
@@ -38,6 +39,37 @@ install_java() {
     fi
 }
 
+install_dialog() {
+    if command -v apt &>/dev/null; then
+        sudo apt update && sudo apt install -y dialog
+    elif command -v yum &>/dev/null; then
+        sudo yum install -y dialog
+    elif command -v dnf &>/dev/null; then
+        sudo dnf install -y dialog
+    elif command -v pacman &>/dev/null; then
+        sudo pacman -Sy --noconfirm dialog
+    else
+        echo -e "${red}${bold}Error: Unsupported distribution. Please install Dialog manually.${clear}"
+        exit 1
+    fi
+
+    if [ $? -eq 0 ]; then
+        java_installed="true"
+    fi
+}
+
+check_dialog() {
+    if ! command -v dialog &>/dev/null; then
+        echo -e "${red}${bold}Dialog not installed. Installing Dialog...${clear}"
+        install_dialog
+        if ! command -v dialog &>/dev/null; then
+            echo -e "${red}${bold}Error: Dialog installation failed.${clear}"
+            exit 1
+        fi
+    else
+        dialog_installed="true"
+    fi
+}
 
 # Check if Java is installed
 check_java() {
@@ -91,5 +123,6 @@ server_setup() {
 }
 
 check_java
+check_dialog
 server_download
 server_setup
