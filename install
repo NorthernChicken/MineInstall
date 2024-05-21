@@ -20,6 +20,7 @@ clear='\e[0m'
 java_installed="false"
 dialog_installed="false"
 jar_link="Jar link not set"
+link_pattern="^(http|https|ftp)://[a-zA-Z0-9]+(\.[a-zA-Z]{2,})+(/[a-zA-Z0-9#&?_=]+)*$"
 
 install_java() {
     if command -v apt &>/dev/null; then
@@ -567,6 +568,41 @@ server_setup() {
 display_help() {
     dialog --title "Help" \
     --msgbox "Select which software you would like the server to use. For normal servers, select Vanilla. If you would like to use plugins, select Paper, Spigot, or Purpur. For server mods, select Fabric or Forge." 10 40
+}
+
+paper_not_supported() {
+    dialog --title "Error" \
+    --msgbox "Error: Paper does not support this version of Minecraft. Select a different version or software. Error message: {$server_link}" 0 0
+}
+
+spigot_not_supported() {
+    dialog --title "Error" \
+    --msgbox "Error: Spigot does not support this version of Minecraft. Select a different version or software. Error message: {$server_link}" 0 0
+}
+
+purpur_not_supported() {
+    dialog --title "Error" \
+    --msgbox "Error: Purpur does not support this version of Minecraft. Select a different version or software. Error message: {$server_link}" 0 0
+}
+
+paper_too_old() {
+    dialog --title "Error" \
+    --msgbox "Error: Paper does not support versions older than 1.8.8. Error message: {$server_link}" 0 0
+}
+
+spigot_too_old() {
+    dialog --title "Error" \
+    --msgbox "Error: Spigot does not support versions older than 1.4.6. Error message: {$server_link}" 0 0
+}
+
+purpur_too_old() {
+    dialog --title "Error" \
+    --msgbox "Error: Purpur does not support versions older than 1.14.1. Error message: {$server_link}" 0 0
+}
+
+error_generic() {
+    dialog --title "Error" \
+    --msgbox "Error message: {$server_link}" 0 0
 }
 
 get_version() {
@@ -1579,6 +1615,26 @@ if [ "$jar_link" = "Jar link not set" ]; then
         fi
 else
     server_link="$jar_link"
+fi
+
+if [[ $server_link =~ $pattern ]]; then
+    :
+else
+    if [ "$server_link" = "PAPER_NOT_SUPPORTED" ]; then
+        paper_not_supported
+    elif [ "$server_link" = "SPIGOT_NOT_SUPPORTED" ]; then
+        spigot_not_supported
+    elif [ "$server_link" = "PURPUR_NOT_SUPPORTED" ]; then
+        purpur_not_supported
+    elif [ "$server_link" = "PAPER_TOO_OLD" ]; then
+        paper_too_old
+    elif [ "$server_link" = "SPIGOT_TOO_OLD" ]; then
+        spigot_too_old
+    elif [ "$server_link" = "PURPUR_TOO_OLD" ]; then
+        purpur_too_old
+    else
+        error_generic
+    fi
 fi
 
 server_download
