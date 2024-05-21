@@ -692,5 +692,894 @@ get_software() {
 
 check_java
 check_dialog
+
+get_version
+get_software
+
+if [ "$jar_link" = "Jar link not set" ]; then
+    if [ "$server_version" = "1"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$10_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$10_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$10_paper"
+        else
+            server_link="$10_vanilla"
+        fi
+    elif [ "$server_version" = "2"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$101_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$101_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$101_paper"
+        else
+            server_link="$101_vanilla"
+        fi
+    elif [ "$server_version" = "3"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$11_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$11_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$11_paper"
+        else
+            server_link="$11_vanilla"
+        fi
+    elif [ "$server_version" = "4"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$121_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$121_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$121_paper"
+        else
+            server_link="$121_vanilla"
+        fi
+    elif [ "$server_version" = "5"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$122_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$122_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$122_paper"
+        else
+            server_link="$122_vanilla"
+        fi
+    elif [ "$server_version" = "6"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$123_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$123_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$123_paper"
+        else
+            server_link="$123_vanilla"
+        fi
+    elif [ "$server_version" = "7"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$124_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$124_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$124_paper"
+        else
+            server_link="$124_vanilla"
+        fi
+    elif [ "$server_version" = "8"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$125_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$125_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$125_paper"
+        else
+            server_link="$125_vanilla"
+        fi
+    elif [ "$server_version" = "9"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$131_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$131_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$131_paper"
+        else
+            server_link="$131_vanilla"
+        fi
+    elif [ "$server_version" = "10"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$132_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$132_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$132_paper"
+        else
+            server_link="$132_vanilla"
+        fi
+    elif [ "$server_version" = "11"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$142_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$142_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$142_paper"
+        else
+            server_link="$142_vanilla"
+        fi
+    elif [ "$server_version" = "12"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$144_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$144_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$144_paper"
+        else
+            server_link="$144_vanilla"
+        fi
+    elif [ "$server_version" = "13"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$145_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$145_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$145_paper"
+        else
+            server_link="$145_vanilla"
+        fi
+    elif [ "$server_version" = "14"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$146_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$146_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$146_paper"
+        else
+            server_link="$46_vanilla"
+        fi
+    elif [ "$server_version" = "15"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$147_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$147_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$147_paper"
+        else
+            server_link="$147_vanilla"
+        fi
+    elif [ "$server_version" = "16"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$15_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$15_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$15_paper"
+        else
+            server_link="$15_vanilla"
+        fi
+    elif [ "$server_version" = "17"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$151_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$151_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$151_paper"
+        else
+            server_link="$151_vanilla"
+        fi
+    elif [ "$server_version" = "18"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$152_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$152_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$152_paper"
+        else
+            server_link="$152_vanilla"
+        fi
+    elif [ "$server_version" = "19"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$161_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$161_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$161_paper"
+        else
+            server_link="$161_vanilla"
+        fi
+    elif [ "$server_version" = "20"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$162_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$162_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$162_paper"
+        else
+            server_link="$162_vanilla"
+        fi
+    elif [ "$server_version" = "21"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$164_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$164_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$164_paper"
+        else
+            server_link="$164_vanilla"
+        fi
+    elif [ "$server_version" = "22"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$172_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$172_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$172_paper"
+        else
+            server_link="$172_vanilla"
+        fi
+    elif [ "$server_version" = "23"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$173_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$173_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$173_paper"
+        else
+            server_link="$173_vanilla"
+        fi
+    elif [ "$server_version" = "24"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$174_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$174_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$174_paper"
+        else
+            server_link="$174_vanilla"
+        fi
+    elif [ "$server_version" = "25"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$175_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$175_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$175_paper"
+        else
+            server_link="$175_vanilla"
+        fi
+    elif [ "$server_version" = "26"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$176_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$176_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$176_paper"
+        else
+            server_link="$176_vanilla"
+        fi
+    elif [ "$server_version" = "27"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$177_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$177_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$177_paper"
+        else
+            server_link="$177_vanilla"
+        fi
+    elif [ "$server_version" = "28"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$178_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$178_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$178_paper"
+        else
+            server_link="$178_vanilla"
+        fi
+    elif [ "$server_version" = "29"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$179_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$179_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$179_paper"
+        else
+            server_link="$179_vanilla"
+        fi
+    elif [ "$server_version" = "30"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1710_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1710_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1710_paper"
+        else
+            server_link="$1710_vanilla"
+        fi
+    elif [ "$server_version" = "31"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$18_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$18_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$18_paper"
+        else
+            server_link="$18_vanilla"
+        fi
+    elif [ "$server_version" = "32"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$181_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$181_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$181_paper"
+        else
+            server_link="$181_vanilla"
+        fi
+    elif [ "$server_version" = "33"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$182_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$182_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$182_paper"
+        else
+            server_link="$182_vanilla"
+        fi
+    elif [ "$server_version" = "34"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$183_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$183_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$183_paper"
+        else
+            server_link="$183_vanilla"
+        fi
+    elif [ "$server_version" = "35"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$184_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$184_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$184_paper"
+        else
+            server_link="$184_vanilla"
+        fi
+    elif [ "$server_version" = "36"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$185_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$185_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$185_paper"
+        else
+            server_link="$185_vanilla"
+        fi
+    elif [ "$server_version" = "37"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$186_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$186_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$186_paper"
+        else
+            server_link="$186_vanilla"
+        fi
+    elif [ "$server_version" = "38"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$187_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$187_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$187_paper"
+        else
+            server_link="$187_vanilla"
+        fi
+    elif [ "$server_version" = "39"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$188_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$188_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$188_paper"
+        else
+            server_link="$188_vanilla"
+        fi
+    elif [ "$server_version" = "40"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$189_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$189_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$189_paper"
+        else
+            server_link="$189_vanilla"
+        fi
+    elif [ "$server_version" = "41"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$19_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$19_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$19_paper"
+        else
+            server_link="$19_vanilla"
+        fi
+    elif [ "$server_version" = "42"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$191_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$191_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$191_paper"
+        else
+            server_link="$191_vanilla"
+        fi
+    elif [ "$server_version" = "43"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$192_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$192_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$192_paper"
+        else
+            server_link="$192_vanilla"
+        fi
+    elif [ "$server_version" = "44"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$193_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$193_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$193_paper"
+        else
+            server_link="$193_vanilla"
+        fi
+    elif [ "$server_version" = "45"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$194_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$194_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$194_paper"
+        else
+            server_link="$194_vanilla"
+        fi
+    elif [ "$server_version" = "46"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$110_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$110_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$110_paper"
+        else
+            server_link="$110_vanilla"
+        fi
+    elif [ "$server_version" = "47"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1101_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1101_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1101_paper"
+        else
+            server_link="$1101_vanilla"
+        fi
+    elif [ "$server_version" = "48"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1102_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1102_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1102_paper"
+        else
+            server_link="$1102_vanilla"
+        fi
+    elif [ "$server_version" = "49"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$111_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$111_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$111_paper"
+        else
+            server_link="$111_vanilla"
+        fi
+    elif [ "$server_version" = "50"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1111_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1111_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1111_paper"
+        else
+            server_link="$1111_vanilla"
+        fi
+    elif [ "$server_version" = "51"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1112_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1112_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1112_paper"
+        else
+            server_link="$1112_vanilla"
+        fi
+    elif [ "$server_version" = "52"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$112_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$112_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$112_paper"
+        else
+            server_link="$112_vanilla"
+        fi
+    elif [ "$server_version" = "53"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1121_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1121_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1121_paper"
+        else
+            server_link="$1121_vanilla"
+        fi
+    elif [ "$server_version" = "54"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1122_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1122_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1122_paper"
+        else
+            server_link="$1122_vanilla"
+        fi
+    elif [ "$server_version" = "55"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$113_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$113_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$113_paper"
+        else
+            server_link="$113_vanilla"
+        fi
+    elif [ "$server_version" = "56"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1131_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1131_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1131_paper"
+        else
+            server_link="$1131_vanilla"
+        fi
+    elif [ "$server_version" = "57"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1132_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1132_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1132_paper"
+        else
+            server_link="$1132_vanilla"
+        fi
+    elif [ "$server_version" = "58"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$114_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$114_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$114_paper"
+        else
+            server_link="$114_vanilla"
+        fi
+    elif [ "$server_version" = "59"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1141_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1141_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1141_paper"
+        else
+            server_link="$1141_vanilla"
+        fi
+    elif [ "$server_version" = "60"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1142_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1142_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1142_paper"
+        else
+            server_link="$1142_vanilla"
+        fi
+    elif [ "$server_version" = "61"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1143_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1143_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1143_paper"
+        else
+            server_link="$1143_vanilla"
+        fi
+    elif [ "$server_version" = "62"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1144_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1144_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1144_paper"
+        else
+            server_link="$1144_vanilla"
+        fi
+    elif [ "$server_version" = "63"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$115_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$115_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$115_paper"
+        else
+            server_link="$115_vanilla"
+        fi
+    elif [ "$server_version" = "64"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1151_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1151_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1151_paper"
+        else
+            server_link="$1151_vanilla"
+        fi
+    elif [ "$server_version" = "65"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1152_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1152_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1152_paper"
+        else
+            server_link="$1152_vanilla"
+        fi
+    elif [ "$server_version" = "66"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$116_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$116_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$116_paper"
+        else
+            server_link="$116_vanilla"
+        fi
+    elif [ "$server_version" = "67"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1161_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1161_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1161_paper"
+        else
+            server_link="$1161_vanilla"
+        fi
+    elif [ "$server_version" = "68"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1162_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1162_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1162_paper"
+        else
+            server_link="$1162_vanilla"
+        fi
+    elif [ "$server_version" = "69"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1163_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1163_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1163_paper"
+        else
+            server_link="$1163_vanilla"
+        fi
+    elif [ "$server_version" = "70"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1164_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1164_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1164_paper"
+        else
+            server_link="$1164_vanilla"
+        fi
+    elif [ "$server_version" = "71"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1165_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1165_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1165_paper"
+        else
+            server_link="$1165_vanilla"
+        fi
+    elif [ "$server_version" = "72"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$117_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$117_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$117_paper"
+        else
+            server_link="$117_vanilla"
+        fi
+    elif [ "$server_version" = "73"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1171_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1171_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1171_paper"
+        else
+            server_link="$1171_vanilla"
+        fi
+    elif [ "$server_version" = "74"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$118_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$118_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$118_paper"
+        else
+            server_link="$118_vanilla"
+        fi
+    elif [ "$server_version" = "75"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1181_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1181_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1181_paper"
+        else
+            server_link="$1181_vanilla"
+        fi
+    elif [ "$server_version" = "76"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1182_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1182_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1182_paper"
+        else
+            server_link="$1182_vanilla"
+        fi
+    elif [ "$server_version" = "77"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$119_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$119_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$119_paper"
+        else
+            server_link="$119_vanilla"
+        fi
+    elif [ "$server_version" = "78"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1191_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1191_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1191_paper"
+        else
+            server_link="$1191_vanilla"
+        fi
+    elif [ "$server_version" = "79"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1192_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1192_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1192_paper"
+        else
+            server_link="$1192_vanilla"
+        fi
+    elif [ "$server_version" = "80"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1193_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1193_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1193_paper"
+        else
+            server_link="$1193_vanilla"
+        fi
+    elif [ "$server_version" = "81"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1194_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1194_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1194_paper"
+        else
+            server_link="$1194_vanilla"
+        fi
+    elif [ "$server_version" = "82"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$120_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$120_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$120_paper"
+        else
+            server_link="$120_vanilla"
+        fi
+    elif [ "$server_version" = "83"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1201_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1201_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1201_paper"
+        else
+            server_link="$1201_vanilla"
+        fi
+    elif [ "$server_version" = "84"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1202_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1202_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1202_paper"
+        else
+            server_link="$1202_vanilla"
+        fi
+    elif [ "$server_version" = "85"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1203_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1203_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1203_paper"
+        else
+            server_link="$1203_vanilla"
+        fi
+    elif [ "$server_version" = "86"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1204_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1204_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1204_paper"
+        else
+            server_link="$1204_vanilla"
+        fi
+    elif [ "$server_version" = "87"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1205_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1205_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1205_paper"
+        else
+            server_link="$1205_vanilla"
+        fi
+    elif [ "$server_version" = "88"]; then
+        if [ "$server_software" = "1" ]; then
+            server_link="$1206_purpur"
+        elif [ "$server_software" = "2" ]; then
+            server_link="$1206_spigot"
+        elif [ "$server_software" = "3" ]; then
+            server_link="$1206_paper"
+        else
+            server_link="$1206_vanilla"
+        fi
+else
+    server_link="$jar_link"
+fi
+
 server_download
 server_setup
