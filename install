@@ -6,7 +6,7 @@
 # Repo: https://github.com/NorthernChicken/MineInstall
 # -------------------------------
 
-server_version="1.21"
+server_version="1.21.1"
 server_link="https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar"
 server_run="java -Xmx1024M -Xms1024M -jar server.jar nogui"
 
