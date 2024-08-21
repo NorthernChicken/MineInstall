@@ -18,6 +18,8 @@ bold='\e[1m'
 clear='\e[0m'
 
 java_installed="false"
+dialog_installed="false"
+exit_code=2
 
 install_java() {
     if command -v apt &>/dev/null; then
@@ -38,6 +40,37 @@ install_java() {
     fi
 }
 
+install_dialog() {
+    if command -v apt &>/dev/null; then
+        sudo apt update && sudo apt install -y dialog
+    elif command -v yum &>/dev/null; then
+        sudo yum install -y dialog
+    elif command -v dnf &>/dev/null; then
+        sudo dnf install -y dialog
+    elif command -v pacman &>/dev/null; then
+        sudo pacman -Sy --noconfirm dialog
+    else
+        echo -e "${red}${bold}Error: Unsupported distribution. Please install Dialog manually.${clear}"
+        exit 1
+    fi
+
+    if [ $? -eq 0 ]; then
+        java_installed="true"
+    fi
+}
+
+check_dialog() {
+    if ! command -v dialog &>/dev/null; then
+        echo -e "${red}${bold}Dialog not installed. Installing Dialog...${clear}"
+        install_dialog
+        if ! command -v dialog &>/dev/null; then
+            echo -e "${red}${bold}Error: Dialog installation failed.${clear}"
+            exit 1
+        fi
+    else
+        dialog_installed="true"
+    fi
+}
 
 # Check if Java is installed
 check_java() {
@@ -51,6 +84,61 @@ check_java() {
     else
         java_installed="true"
     fi
+}
+
+download_method_selector() {
+    result=$(dialog --title "Server.jar download" \
+        --menu "What Minecraft version would you like to download?" 0 0 0 \
+        1 "Latest version (Vanilla $server_version)" \
+        2 "Custom server software/version" \
+        3>&1 1>&2 2>&3)
+    clear
+    if [ $? -eq 0 ]; then
+        if [ "$result" -eq 1 ]; then
+            echo "You selected the latest version: $server_version"
+        elif [ "$result" -eq 2 ]; then
+            while [ "$exit_code" = 2 ]; do
+                select_jar
+            done
+        fi
+    else
+        echo "Dialog canceled or an error occurred."
+    fi
+}
+
+validate_url() {
+    if [[ "$1" =~ ^https?://.*\..* ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+select_jar() {
+    server_link=$(dialog --help-button \
+        --inputbox "Enter link to server.jar" 0 0  \
+        3>&1 1>&2 2>&3 3>&-)
+    exit_code=$?
+    clear
+    if [ $exit_code -eq 0 ]; then
+        if validate_url "$server_link"; then
+            echo "Entered URL: $server_link"
+        else
+            dialog --infobox "Invalid URL." 0 0
+            sleep 2
+            clear
+            exit_code=2
+        fi
+    elif [ $exit_code -eq 1 ]; then
+        echo "Canceled"
+    elif [ $exit_code -eq 2 ]; then
+        select_jar_help
+    fi
+}
+
+select_jar_help() {
+    dialog --title "Help" \
+        --msgbox "To find the server.jar download link, navigate to the download page of your desired server software and copy the URL of the download link or button." 0 0 
 }
 
 # Download the server.jar file from Mojang's official servers
@@ -90,6 +178,7 @@ server_setup() {
     fi
 }
 
+download_method_selector
 check_java
 server_download
 server_setup

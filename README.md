@@ -1,10 +1,10 @@
 # MineInstall
-A simple, non-bloated Bash script to download and install a vanilla Minecraft server onto your Linux computer/server. (Does not work with modded servers. You will have to manually replace the server.jar with a modded one and run server again.)
+A simple, non-bloated Bash script to download and install a vanilla Minecraft server onto your Linux computer/server. Allows you to choose the latest version of Minecraft or download a custom version or server software of your choice.
 
 # Supported Distros
 All distros that use the following package managers are supported:
 ```apt, yum, dnf, pacman```. This includes all Debian, Arch, and Fedora-based distros.
-Other distros WILL still work, but you will have to install Java manually beforehand.
+Other distros WILL still work, but you will have to install Java and the Dialog package manually beforehand.
 
 # Download
 1. Navigate to the home directory: ```cd ~```
@@ -28,7 +28,7 @@ To change server properties, such as Whitelist or MOTD, you will need to edit th
 
 # Custom Minecraft Version
 
-This script automatically installs the latest version of Minecraft. If you want to use a different version or use a modded server (paper, spigot, etc.) you have to change the "$server_link" variable to the URL of the server.jar download.
+This script gives you the option to either install the latest version of vanilla Minecraft, or enter a URL to the download of a custom Minecraft version or modded server software (paper, spigot, etc.) Get the download link for the custom server.jar and paste it into the Dialog box when prompted.
 
 # Uninstall
 Run this command to uninstall the Minecraft server and delete any associated files (in the server directory, ~/server):
