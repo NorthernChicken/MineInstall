@@ -180,5 +180,6 @@ server_setup() {
 
 download_method_selector
 check_java
+check_dialog
 server_download
 server_setup
