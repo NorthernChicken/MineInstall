@@ -37,3 +37,8 @@ WARNING: THIS WILL DELETE YOUR SERVER, ITS WORLD, AND ALL PLAYER DATA. RUN AT YO
 
 ```cd ~/server```
 ```./uninstall```
+
+# Todo
+* Verify if the custom download link is actually a Jar file, and if not, loop back
+* Better error handling
+
