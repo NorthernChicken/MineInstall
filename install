@@ -178,8 +178,8 @@ server_setup() {
     fi
 }
 
-download_method_selector
 check_java
 check_dialog
+download_method_selector
 server_download
 server_setup
