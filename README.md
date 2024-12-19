@@ -1,5 +1,5 @@
 # MineInstall
-A simple, non-bloated Bash script to download and install a vanilla Minecraft server onto your Linux computer/server. Allows you to choose the latest version of Minecraft or download a custom version or server software of your choice.
+A simple, non-bloated Bash script allowing you to download and install a Minecraft server onto your Linux machine. Allows you to choose the latest version of Minecraft or download a custom version or modded server software of your choice.
 
 # Supported Distros
 All distros that use the following package managers are supported:
