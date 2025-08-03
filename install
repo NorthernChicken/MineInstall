@@ -72,7 +72,6 @@ check_dialog() {
     fi
 }
 
-# Check if Java is installed
 check_java() {
     if ! command -v java &>/dev/null; then
         echo -e "${red}${bold}Java is not installed. Installing Java...${clear}"
@@ -141,7 +140,7 @@ select_jar_help() {
         --msgbox "To find the server.jar download link, navigate to the download page of your desired server software and copy the URL of the download link or button." 0 0 
 }
 
-# Download the server.jar file from Mojang's official servers
+# Download the server.jar file from Mojang's official servers or custom url
 server_download() {
     if [ "$java_installed" = "true" ]; then
         if [ ! -d "$server_directory" ]; then
@@ -178,8 +177,8 @@ server_setup() {
     fi
 }
 
-download_method_selector
 check_java
 check_dialog
+download_method_selector
 server_download
 server_setup
